@@ -225,6 +225,7 @@ public class CPRReviewFrame
             }
         });
         tfNumber.setForeground(Color.white);
+        tfNumber.setBackground(Color.black);
         /*p1 = new Panel();
         //p1.setLayout(new GridLayout(1,2));
         p1.setLayout(new BorderLayout()); //GridLayout(1,2));

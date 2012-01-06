@@ -502,7 +502,7 @@ public class CPRGameFrame
 //       addComponent(gbl, cbSound, this, 4, 3, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, false);
        addComponent(gbl, lblDifficulty, this, 1, 4, 1, 1, 5, 5, 5, 5, GridBagConstraints.EAST, false);
        addComponent(gbl, chDifficulty, this, 2, 4, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, true);
-       addComponent(gbl, cbRangeCurrentOnly, this, 3, 4, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, true);
+//       addComponent(gbl, cbRangeCurrentOnly, this, 3, 4, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, true);
 //       addComponent(gbl, cbViolence, this, 4, 4, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, false);
        addComponent(gbl, lblRange, this, 1, 5, 1, 1, 5, 5, 5, 5, GridBagConstraints.EAST, false);
        addComponent(gbl, cbRangeCumulative, this, 2, 5, 1, 1, 5, 5, 5, 5, GridBagConstraints.WEST, true);
@@ -1383,14 +1383,14 @@ public class CPRGameFrame
                  boolean isModel)
        {
           super(frmParent, strTitle, isModel);
-          //this.setBackground(Color.black);
+          this.setBackground(Color.black);
           Label lblText = new Label(strText, Label.CENTER);
           lblText.setForeground(Color.white);
-          //lblText.setBackground(Color.black);
+          lblText.setBackground(Color.black);
           lblText.setFont(new Font("Serif", Font.ITALIC + Font.BOLD, 18));               
           Button btnOkay = new Button(" Okay ");
-          btnOkay.setForeground(Color.white);
-          //btnOkay.setBackground(Color.black);
+          btnOkay.setForeground(Color.black);
+          btnOkay.setBackground(Color.white);
           btnOkay.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)
@@ -1440,14 +1440,14 @@ public class CPRGameFrame
        {
           super(frmParent, strTitle, isModel);
           this.frmParent = frmParent;
-          //this.setBackground(Color.black);
+          this.setBackground(Color.black);
           lblQuit = new Label("Are you sure you want to quit?", Label.CENTER);
           lblQuit.setForeground(Color.white);
-          //lblQuit.setBackground(Color.black);
+          lblQuit.setBackground(Color.black);
           lblQuit.setFont(new Font("Serif", Font.BOLD, 18));               
           btnYes = new Button(" Yes ");
-          btnYes.setForeground(Color.white);
-          //btnYes.setBackground(Color.black);
+          btnYes.setForeground(Color.black);
+          btnYes.setBackground(Color.white);
           btnYes.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)
@@ -1457,8 +1457,8 @@ public class CPRGameFrame
           });
           btnYes.setFont(new Font("SansSerif", Font.BOLD, 14));               
           btnNo = new Button("  No  ");
-          btnNo.setForeground(Color.white);
-          //btnNo.setBackground(Color.black);
+          btnNo.setForeground(Color.black);
+          btnNo.setBackground(Color.white);
           btnNo.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)
