@@ -1,3 +1,4 @@
+package com.joshdrummond.cpr;
 import java.awt.*;
 
 public class CPRTitleCanvas
@@ -17,7 +18,7 @@ public class CPRTitleCanvas
 
         threadSuspended = false;
 
-	resize(15*(bannerLength + 1), 50);
+	setSize(15*(bannerLength + 1), 50);
 	setForeground(colTitle);
 	setFont(fntTitle);
 //	new Font("TimesRoman", Font.BOLD, 36));

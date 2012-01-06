@@ -1,3 +1,4 @@
+package com.joshdrummond.cpr;
 /*
     Chinese Polar Races v1.xx
     Joshua Drummond

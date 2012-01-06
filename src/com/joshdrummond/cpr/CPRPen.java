@@ -1,3 +1,4 @@
+package com.joshdrummond.cpr;
 // CPR 2.0
 // Josh Drummond
 // (c) 1999

@@ -1,3 +1,4 @@
+package com.joshdrummond.cpr;
 // Chinese Polar Races v2.0
 //  By Josh Drummond
 //  Sets a space for drawing of chinese characters

@@ -1,3 +1,4 @@
+package com.joshdrummond.cpr;
 // Chinese Polar Races v1.0
 //  By Josh Drummond
 //  Sets a space for the animation images and characters in the game
