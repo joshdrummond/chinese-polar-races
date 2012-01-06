@@ -24,8 +24,6 @@ public class CPRGameFrame
 
    // *** Checkboxes
    private CheckboxGroup cbgOption;
-//   private Checkbox cbSound;
-//   private Checkbox cbViolence;
    private Checkbox cbTrans1;
    private Checkbox cbTrans2;
    private Checkbox cbTrans3;
@@ -86,8 +84,6 @@ public class CPRGameFrame
    private int intEnemyHealth;
    private int intCorrect;
    private int intTotal;
-  // private int intRound;
-   //private int intRoundWin;
    private int intTotalWins;
    private int intTotalLosses;
    private int intRace;
@@ -195,17 +191,6 @@ public class CPRGameFrame
       lblInput.setForeground(Color.white);
       lblInput.setFont(new Font("SansSerif", Font.BOLD, 14));
 
- /*     cbSound = new Checkbox("Sound", true);
-      cbSound.setBackground(Color.black);
-      cbSound.setForeground(Color.white);
-      cbSound.setFont(new Font("Serif", Font.BOLD, 12));
-      cbSound.addItemListener(new MyItemListener(cmdSound));
-
-      cbViolence = new Checkbox("Violence", true);
-      cbViolence.setBackground(Color.black);
-      cbViolence.setForeground(Color.white);
-      cbViolence.setFont(new Font("Serif", Font.BOLD, 12));
-*/
       cbgRange = new CheckboxGroup();
 
       cbRangeCumulative = new Checkbox("Cumulative to Lesson", true, cbgRange);
@@ -279,21 +264,25 @@ public class CPRGameFrame
       chLesson = new Choice();
       chLesson.setFont(new Font("Serif", Font.BOLD, 14));
       chLesson.setBackground(Color.white);
-//      for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
-//         chLesson.addItem(""+(i+1));
       // pcr
       for (int i = 0; i < 30; i++)
-         chLesson.addItem(""+(i+1));
+         chLesson.addItem("PCR-"+(i+1));
       // lic
-      chLesson.addItem("L-2");
-      chLesson.addItem("L-3");
-      chLesson.addItem("L-6");
-      chLesson.addItem("L-7");
-      chLesson.addItem("L-8");
-      chLesson.addItem("L-12");
-      chLesson.addItem("L-18");
-      chLesson.addItem("L-20");
-      chLesson.addItem("L-21");
+      chLesson.addItem("LIC-2");
+      chLesson.addItem("LIC-3");
+      chLesson.addItem("LIC-6");
+      chLesson.addItem("LIC-7");
+      chLesson.addItem("LIC-8");
+      chLesson.addItem("LIC-12");
+      chLesson.addItem("LIC-18");
+      chLesson.addItem("LIC-20");
+      chLesson.addItem("LIC-21");
+      chLesson.addItem("LIC-22");
+      chLesson.addItem("LIC-23");
+      chLesson.addItem("LIC-26");
+      chLesson.addItem("LIC-27");
+      chLesson.addItem("LIC-29");
+      chLesson.addItem("LIC-30");
       chLesson.addItemListener(new MyItemListener(cmdLesson));
 
       lblRound = new Label("Round", Label.CENTER);
@@ -575,52 +564,10 @@ public class CPRGameFrame
           processEvent(cmd);
        }
     }
-/*
-    private void doSoundChange()
-    {
-       if (cbSound.getState())
-       {
-          // sound is enabled
-          cbTrans1.setState(true);
-          cbTrans3.setEnabled(true);
-          cbTrans4.setEnabled(true);
-       }
-       else
-       {
-          // sound is disabled
-          cbTrans1.setState(true);
-          cbTrans3.setEnabled(false);
-          cbTrans4.setEnabled(false);
-       }
-    }
-*/
-/*
-    private void doLanguageChange()
-    {
-        String strChoice = chLanguage.getSelectedItem();
 
-        if (strChoice.equals("Korean") ||
-            strChoice.equals("Japanese") ||
-            strChoice.equals("Chinese"))
-        {
-           // language with pix
-          cbTrans1.setState(true);
-          cbTrans5.setEnabled(true);
-          cbTrans6.setEnabled(true);
-        }
-        else
-        {
-           // not pix language
-          cbTrans1.setState(true);
-          cbTrans5.setEnabled(false);
-          cbTrans6.setEnabled(false);
-        }
-    }
-*/
+
     private void doOptionOkayHit()
     {
-//       isSound = cbSound.getState();
-//       isViolence = cbSound.getState();
 
        intDifficulty = chDifficulty.getSelectedIndex() + 1;
        if (intDifficulty == 1)
@@ -645,20 +592,6 @@ public class CPRGameFrame
           intDamageBadHit = 30;
        }
 
-//       String strLanguage = chLanguage.getSelectedItem();
- /*      if (strLanguage.equals("Korean"))
-          words = new CPRVocab(1); //CPRVocab.KOREAN);
-       else if (strLanguage.equals("Japanese"))
-          words = new CPRVocab(CPRVocab.JAPANESE);
-       else if (strLanguage.equals("Chinese"))
-          words = new CPRVocab(CPRVocab.CHINESE);
-       else if (strLanguage.equals("Spanish"))
-          words = new CPRVocab(CPRVocab.SPANISH);
-       else if (strLanguage.equals("French"))
-          words = new CPRVocab(CPRVocab.FRENCH);
-       else if (strLanguage.equals("German"))
-          words = new CPRVocab(CPRVocab.GERMAN);
-*/
        //words = new CPRVocab((Integer.valueOf(chLesson.getSelectedItem())).intValue());
        words = new CPRVocab(chLesson.getSelectedIndex() + 1);
 
@@ -704,10 +637,7 @@ public class CPRGameFrame
           case cmdOptionCancel:
              doOptionCancelHit();
              break;
-/*          case cmdSound:
-             doSoundChange();
-             break;
-*/          case cmdLesson:
+          case cmdLesson:
             // doLanguageChange();
              break;
           case cmdNewLevelOkay:
@@ -785,33 +715,7 @@ public class CPRGameFrame
         sound.play();
      }
 
-/*
-     private void drawNewLevel()
-     {
-        removeAll();
-        setSize(750,550);
-        center();
-        setLayout(new BorderLayout());
-        Panel panPic = new Panel();
-        panPic.add(new CPRImageCanvas(CPR.app.getImage(
-          CPR.app.getDocumentBase(), "enemyintro" + intLevel +
-          ".jpg"), 400, 400));
-        Panel panBut = new Panel();
-        panBut.add(btnNewLevelOkay);
-        lblLevel.setText(" F I G H T   " + intLevel);
-        add(lblLevel, "North");
-        add(panPic, "East");
-        add(panBut, "South");
-        validate();
-     }
 
-
-     private void doNewLevelOkayHit()
-     {
-        drawGame();
-     }
-
-*/
      private void drawGame()
      {
         removeAll();
@@ -821,8 +725,6 @@ public class CPRGameFrame
         add(panLeft);
         add(panRight);
         validate();
-        //intRoundWin = 0;
-        //intRound = 1;
         intRadmanHealth = 100;
         intEnemyHealth = 100;
         updateButtons();
@@ -841,11 +743,12 @@ public class CPRGameFrame
           ((100*intCorrect/intTotal))+"%");
 
        // added support to show correct answer if not in multiple choice mode
-//       if (!isMultipleChoice)
-//       {
-          //lblOldAnswer.setText("");
-          lblOldAnswer.setText("Dui4 le! (" + words.getForeign(intWord) + ")");
-//       }
+       if ((intMethod == 1) ||
+           (intMethod == 4) ||
+           (intMethod == 6))
+         lblOldAnswer.setText("Dui4 le! (" + words.getForeign(intWord) + ")");
+       else
+          lblOldAnswer.setText("Dui4 le! (" + words.getEnglish(intWord) + ")");
 
         canAnimation.repaint();
     }
@@ -880,32 +783,9 @@ public class CPRGameFrame
        intRadmanHealth = 100;
        intEnemyHealth = 100;
 
-//       if (intRound == 1)
-//       {
-//          intRound++;
-//          intRoundWin++;
           intTotalWins++;
           intRace++;
           updateButtons();
-/*       }
-       else if (intRound == 2)
-       {
-          if (intRoundWin == 1)
-          {
-             doWinLevel();
-          }
-          else
-          {
-             intRound++;
-             intRoundWin++;
-             updateButtons();
-          }
-       }
-       else if (intRound == 3)
-       {
-          doWinLevel();
-       }
-*/
     }
 
     private void doLoseRound()
@@ -915,44 +795,10 @@ public class CPRGameFrame
        intRadmanHealth = 100;
        intEnemyHealth = 100;
 
-//       if (intRound == 1)
-//       {
-//          intRound++;
-          intTotalLosses++;
-          intRace++;
-          updateButtons();
-/*       }
-       else if (intRound == 2)
-       {
-          if (intRoundWin == 0)
-          {
-             doLoseLevel();
-          }
-          else
-          {
-             intRound++;
-             updateButtons();
-          }
-       }
-       else if (intRound == 3)
-       {
-          doLoseLevel();
-       }
-       */
+       intTotalLosses++;
+       intRace++;
+       updateButtons();
     }
-/*
-    private void doWinLevel()
-    {
-       intLevel++;
-       drawNewLevel();
-    }
-
-
-    private void doLoseLevel()
-    {
-       drawNewLevel();
-    }
-*/
 
     private void doWrong()
     {
@@ -964,10 +810,12 @@ public class CPRGameFrame
            ((100*intCorrect/intTotal))+"%");
 
        // added support to show correct answer if not in multiple choice mode
-//       if (!isMultipleChoice)
-//       {
+       if ((intMethod == 1) ||
+           (intMethod == 4) ||
+           (intMethod == 6))
           lblOldAnswer.setText("Bu4 dui4... (" + words.getForeign(intWord) + ")");
-//       }
+       else
+          lblOldAnswer.setText("Bu4 dui4... (" + words.getEnglish(intWord) + ")");
 
         canAnimation.repaint();
     }

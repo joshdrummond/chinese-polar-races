@@ -23,7 +23,7 @@ public class CPRAboutFrame
         ta.setEditable(false);
         ta.setBackground(Color.black);
         ta.setForeground(Color.white);
-        String s = "Chinese Polar Races v2.5\n" +
+        String s = "Chinese Polar Races v2.6\n" +
                    "(c) 1999-2000 Josh Drummond (Han2 Guo2 An1)\n\n" +
                    "\n\nPurpose:\n\n" +
                    "Learn Mandarin with audio, characters and Pinyin\n" +

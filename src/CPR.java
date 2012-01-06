@@ -25,8 +25,8 @@ public class CPR
     {
        System.out.println("-------------------------------------------------");
        System.out.println("Starting Chinese Polar Races...");
-       System.out.println("Version number: 2.5");
-       System.out.println("Version date: 5/30/2000");
+       System.out.println("Version number: 2.6");
+       System.out.println("Version date: 6/25/2000");
        System.out.println("(c)1999-2000 Josh Drummond");
        System.out.println("-------------------------------------------------");
 

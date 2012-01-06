@@ -18,7 +18,6 @@ public class CPRReviewFrame
     private Label lblNumber;
     private Label lblEnglish;
     private Label lblForeign;
-//    private Label lblLanguage;
     private TextField tfNumber;
     private Label lblEnglishHead;
     private Label lblForeignHead;
@@ -35,7 +34,6 @@ public class CPRReviewFrame
     private CheckboxGroup cbgRange;
     private Checkbox cbxCumulative;
     private Checkbox cbxCurrentOnly;
-//    private Choice chLanguage;
     private Button btnPrev;
     private Button btnNext;
     private Button btnRandom;
@@ -180,21 +178,26 @@ public class CPRReviewFrame
         chLesson = new Choice();
         chLesson.setFont(new Font("SansSerif", Font.BOLD, 14));
         chLesson.setBackground(Color.white);
-        //for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
-        //   chLesson.addItem(""+(i+1));
         // pcr
         for (int i = 0; i < 30; i++)
-           chLesson.addItem(""+(i+1));
+           chLesson.addItem("PCR-"+(i+1));
         // lic
-        chLesson.addItem("L-2");
-        chLesson.addItem("L-3");
-        chLesson.addItem("L-6");
-        chLesson.addItem("L-7");
-        chLesson.addItem("L-8");
-        chLesson.addItem("L-12");
-        chLesson.addItem("L-18");
-        chLesson.addItem("L-20");
-        chLesson.addItem("L-21");
+        chLesson.addItem("LIC-2");
+        chLesson.addItem("LIC-3");
+        chLesson.addItem("LIC-6");
+        chLesson.addItem("LIC-7");
+        chLesson.addItem("LIC-8");
+        chLesson.addItem("LIC-12");
+        chLesson.addItem("LIC-18");
+        chLesson.addItem("LIC-20");
+        chLesson.addItem("LIC-21");
+        chLesson.addItem("LIC-22");
+        chLesson.addItem("LIC-23");
+        chLesson.addItem("LIC-26");
+        chLesson.addItem("LIC-27");
+        chLesson.addItem("LIC-29");
+        chLesson.addItem("LIC-30");
+ 
         chLesson.addItemListener(new ItemListener()
         {
            public void itemStateChanged(ItemEvent e)
