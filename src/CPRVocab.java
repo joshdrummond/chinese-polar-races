@@ -11,8 +11,8 @@ public class CPRVocab
     extends Object
 {
     private String[][] word;
-    public static final int MAX_WORD = 569;
-    public static final int MAX_LESSON = 30;
+    public static final int MAX_WORD = 683;
+    public static final int MAX_LESSON = 39;
     private int intLesson = 0;
     private int intMaxLesson = 0;
 
@@ -27,8 +27,6 @@ public class CPRVocab
        
        loadWords();
     }
-
-
 
     public void loadWords()
     {
@@ -613,7 +611,7 @@ public class CPRVocab
         word[279][0] = new String("year");
         word[279][1] = new String("nian2");
         word[280][0] = new String("last year");
-        word[280][1] = new String("qun4nian2");
+        word[280][1] = new String("qu4nian2");
         word[281][0] = new String("next year");
         word[281][1] = new String("ming2nian2");
         word[282][0] = new String("concert");
@@ -1078,7 +1076,7 @@ public class CPRVocab
         word[507][1] = new String("xing2li");
         word[508][0] = new String("suitcase");
         word[508][1] = new String("xiang1zi");
-        word[509][0] = new String("(measure word)");
+        word[509][0] = new String("(measure word) hat");
         word[509][1] = new String("ding3");
         word[510][0] = new String("hat, cap");
         word[510][1] = new String("mao4zi");
@@ -1200,6 +1198,243 @@ public class CPRVocab
         word[567][1] = new String("guo4");
         word[568][0] = new String("self");
         word[568][1] = new String("zi4ji3");
+        // Laughing in Chinese - Lesson 2
+        word[569][0] = new String("stomach");
+        word[569][1] = new String("du4zi");
+        word[570][0] = new String("bun");
+        word[570][1] = new String("bao1zi");
+        word[571][0] = new String("still, yet");
+        word[571][1] = new String("hai2");
+        word[572][0] = new String("hungry");
+        word[572][1] = new String("e4");
+        word[573][0] = new String("full");
+        word[573][1] = new String("bao3");
+        word[574][0] = new String("to sell");
+        word[574][1] = new String("mai4");
+        word[575][0] = new String("only");
+        word[575][1] = new String("zhi3");
+        word[576][0] = new String("to run");
+        word[576][1] = new String("pao3");
+        word[577][0] = new String("leftover");
+        word[577][1] = new String("sheng4xia4");
+        word[578][0] = new String("the last, finally");
+        word[578][1] = new String("zui4hou4");
+        word[579][0] = new String("not until");
+        word[579][1] = new String("cai2");
+        word[580][0] = new String("stupid");
+        word[580][1] = new String("ben4");
+        word[581][0] = new String("just now");
+        word[581][1] = new String("gang1cai2");
+        word[582][0] = new String("(preposition)");
+        word[582][1] = new String("ba3");
+        word[583][0] = new String("What should I do?");
+        word[583][1] = new String("zen3meban4");
+        word[584][0] = new String("if... why...");
+        word[584][1] = new String("yao4shi4... wei4shen2me...");
+        word[585][0] = new String("sigh");
+        word[585][1] = new String("ai4");
+        // Laughing in Chinese - Lesson 3
+        word[586][0] = new String("cow, ox");
+        word[586][1] = new String("niu2");
+        word[587][0] = new String("grass");
+        word[587][1] = new String("cao3");
+        word[588][0] = new String("Xiao Hua");
+        word[588][1] = new String("xiao3hua2");
+        word[589][0] = new String("(measure word) tree");
+        word[589][1] = new String("ke1");
+        word[590][0] = new String("tree");
+        word[590][1] = new String("shu4");
+        word[591][0] = new String("red");
+        word[591][1] = new String("hong2");
+        word[592][0] = new String("(measure word) animal");
+        word[592][1] = new String("zhi1");
+        word[593][0] = new String("cat");
+        word[593][1] = new String("mao1");
+        word[594][0] = new String("to point at");
+        word[594][1] = new String("zhi3zhe");
+        word[595][0] = new String("(verb suffix)");
+        word[595][1] = new String("zhe");
+        word[596][0] = new String("complete, finished");
+        word[596][1] = new String("wan2");
+        word[597][0] = new String("other");
+        word[597][1] = new String("bie2de");
+        word[598][0] = new String("place");
+        word[598][1] = new String("di4fang1");
+        word[599][0] = new String("confidently");
+        word[599][1] = new String("you3 li3 di");
+        // Laughing in Chinese - Lesson 6
+        word[600][0] = new String("to travel");
+        word[600][1] = new String("lu3xing2");
+        word[601][0] = new String("woods");
+        word[601][1] = new String("shu4lin2");
+        word[602][0] = new String("suddenly");
+        word[602][1] = new String("hu1ran2");
+        word[603][0] = new String("tiger");
+        word[603][1] = new String("lao3hu3");
+        word[604][0] = new String("immediately");
+        word[604][1] = new String("ma3shang4");
+        word[605][0] = new String("to take off");
+        word[605][1] = new String("tuo1xia4");
+        word[606][0] = new String("long boots");
+        word[606][1] = new String("chang2 xue1");
+        word[607][0] = new String("to change into");
+        word[607][1] = new String("huan4shang4");
+        word[608][0] = new String("sneakers");
+        word[608][1] = new String("qiu2xie2");
+        word[609][0] = new String("what to do");
+        word[609][1] = new String("gan4shen2me");
+        word[610][0] = new String("as long as");
+        word[610][1] = new String("zhi3yao4");
+        word[611][0] = new String("in front");
+        word[611][1] = new String("qian2mian4");
+        word[612][0] = new String("even if");
+        word[612][1] = new String("jiu4shi4");
+        word[613][0] = new String("That will do.");
+        word[613][1] = new String("bu2 jiu4 xing2 le");
+        word[614][0] = new String("to laugh");
+        word[614][1] = new String("xiao4");
+        // Laughing in Chinese - Lesson 7
+        word[615][0] = new String("head");
+        word[615][1] = new String("tou2");
+        word[616][0] = new String("hair");
+        word[616][1] = new String("fa3");
+        word[617][0] = new String("already");
+        word[617][1] = new String("yi3jing1");
+        word[618][0] = new String("wife");
+        word[618][1] = new String("qi1zi");
+        word[619][0] = new String("age");
+        word[619][1] = new String("nian2ji4");
+        word[620][0] = new String("hope");
+        word[620][1] = new String("xi1wang4");
+        word[621][0] = new String("to pull off");
+        word[621][1] = new String("ba2diao4");
+        word[622][0] = new String("even");
+        word[622][1] = new String("lian2... ye3");
+        word[623][0] = new String("(measure word) hair");
+        word[623][1] = new String("gen1");
+        word[624][0] = new String("sleep");
+        word[624][1] = new String("shui4jiao4");
+        word[625][0] = new String("half white (hair)");
+        word[625][1] = new String("hua1bai2");
+        word[626][0] = new String("long ago");
+        word[626][1] = new String("cong2qian2");
+        word[627][0] = new String("same");
+        word[627][1] = new String("yi2yang4");
+        word[628][0] = new String("husband");
+        word[628][1] = new String("zhang4fu");
+        // Laughing in Chinese - Lesson 8
+        word[629][0] = new String("ten thousand");
+        word[629][1] = new String("wan4");
+        word[630][0] = new String("(measure word) letter");
+        word[630][1] = new String("feng1");
+        word[631][0] = new String("thousand");
+        word[631][1] = new String("qian1");
+        word[632][0] = new String("impatient");
+        word[632][1] = new String("bu2nai4fan2");
+        word[633][0] = new String("paper for letter");
+        word[633][1] = new String("xin4zhi3");
+        word[634][0] = new String("hurriedly");
+        word[634][1] = new String("lian2mang2");
+        word[635][0] = new String("hour");
+        word[635][1] = new String("xiao3shi2");
+        word[636][0] = new String("words (spoken)");
+        word[636][1] = new String("hua4");
+        word[637][0] = new String("stroke (of character)");
+        word[637][1] = new String("bi3");
+        // Laughing in Chinese - Lesson 12
+        word[638][0] = new String("to change, become");
+        word[638][1] = new String("bian4");
+        word[639][0] = new String("smart");
+        word[639][1] = new String("cong1ming");
+        word[640][0] = new String("medicine");
+        word[640][1] = new String("yao4");
+        word[641][0] = new String("(measure word) times");
+        word[641][1] = new String("ci4");
+        word[642][0] = new String("sugar, candy");
+        word[642][1] = new String("tang2");
+        word[643][0] = new String("oneself");
+        word[643][1] = new String("zi4ji3");
+        word[644][0] = new String("bottle");
+        word[644][1] = new String("ping2zi");
+        word[645][0] = new String("mouth, mouthful");
+        word[645][1] = new String("kou3");
+        word[646][0] = new String("middle aged people");
+        word[646][1] = new String("zhong1nian2ren2");
+        word[647][0] = new String("older people");
+        word[647][1] = new String("lao3nian2ren2");
+        // Laughing in Chinese - Lesson 18
+        word[648][0] = new String("my goodness");
+        word[648][1] = new String("ai1ya");
+        word[649][0] = new String("we (you and me)");
+        word[649][1] = new String("zan2men");
+        word[650][0] = new String("mirror");
+        word[650][1] = new String("jing4zi");
+        word[651][0] = new String("alcoholic, drunk");
+        word[651][1] = new String("jiu3gui3");
+        word[652][0] = new String("pick up");
+        word[652][1] = new String("na2qi3lai");
+        word[653][0] = new String("wall");
+        word[653][1] = new String("qiang2");
+        word[654][0] = new String("forget it");
+        word[654][1] = new String("suan4leba");
+        word[655][0] = new String("the more... the more...");
+        word[655][1] = new String("yue4... yue4...");
+        word[656][0] = new String("idea");
+        word[656][1] = new String("zhu3yi");
+        // Laughing in Chinese - Lesson 20
+        word[657][0] = new String("not only... but also...");
+        word[657][1] = new String("bu2dan4... bing4qie3...");
+        word[658][0] = new String("smoke cigarette");
+        word[658][1] = new String("chou1yan1");
+        word[659][0] = new String("money");
+        word[659][1] = new String("qian2");
+        word[660][0] = new String("(measure word) match, hair");
+        word[660][1] = new String("gen1");
+        word[661][0] = new String("box");
+        word[661][1] = new String("he2");
+        word[662][0] = new String("succeed in lighting a match");
+        word[662][1] = new String("hua2 de zhao2");
+        word[663][0] = new String("matches");
+        word[663][1] = new String("huo3chai2");
+        word[664][0] = new String("reason");
+        word[664][1] = new String("li3you2");
+        word[665][0] = new String("cannot find");
+        word[665][1] = new String("zhao3 bu2 dao4");
+        word[666][0] = new String("a little while");
+        word[666][1] = new String("yi4huir3");
+        // Laughing in Chinese - Lesson 21
+        word[667][0] = new String("government official");
+        word[667][1] = new String("guan1");
+        word[668][0] = new String("honest");
+        word[668][1] = new String("cheng2shi2");
+        word[669][0] = new String("(measure word) cars");
+        word[669][1] = new String("liang4");
+        word[670][0] = new String("automobile");
+        word[670][1] = new String("qi4che1");
+        word[671][0] = new String("to accept");
+        word[671][1] = new String("jie1shou4");
+        word[672][0] = new String("gift");
+        word[672][1] = new String("li3wu4");
+        word[673][0] = new String("certainly");
+        word[673][1] = new String("dang1ran2");
+        word[674][0] = new String("(measure word) dollar");
+        word[674][1] = new String("kuai4");
+        word[675][0] = new String("price");
+        word[675][1] = new String("jia4qian2");
+        word[676][0] = new String("country");
+        word[676][1] = new String("guo2jia1");
+        word[677][0] = new String("people");
+        word[677][1] = new String("ren2min2");
+        word[678][0] = new String("merchant");
+        word[678][1] = new String("shang1ren2");
+        word[679][0] = new String("time");
+        word[679][1] = new String("shi2jian1");
+        word[680][0] = new String("to be angry");
+        word[680][1] = new String("sheng1qi4");
+        word[681][0] = new String("to serve");
+        word[681][1] = new String("fu2wu4");
+        word[682][0] = new String("what you mean");
+        word[682][1] = new String("ni3 de yi4si");
     }
 
 
@@ -1267,6 +1502,15 @@ public class CPRVocab
           case 28 : return 524;
           case 29 : return 555;
           case 30 : return 568;
+          case 31 : return 585;
+          case 32 : return 599;
+          case 33 : return 614;
+          case 34 : return 628;
+          case 35 : return 637;
+          case 36 : return 647;
+          case 37 : return 656;
+          case 38 : return 666;
+          case 39 : return 682;
           default : return -1;
        }
     }

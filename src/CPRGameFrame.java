@@ -271,14 +271,29 @@ public class CPRGameFrame
 
       chDifficulty = new Choice();
       chDifficulty.setFont(new Font("Serif", Font.BOLD, 14));
+      chDifficulty.setBackground(Color.white);
       chDifficulty.add("Too Easy!");
       chDifficulty.add("Intermediate");
       chDifficulty.add("...killer...");
 
       chLesson = new Choice();
       chLesson.setFont(new Font("Serif", Font.BOLD, 14));
-      for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
+      chLesson.setBackground(Color.white);
+//      for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
+//         chLesson.addItem(""+(i+1));
+      // pcr
+      for (int i = 0; i < 30; i++)
          chLesson.addItem(""+(i+1));
+      // lic
+      chLesson.addItem("L-2");
+      chLesson.addItem("L-3");
+      chLesson.addItem("L-6");
+      chLesson.addItem("L-7");
+      chLesson.addItem("L-8");
+      chLesson.addItem("L-12");
+      chLesson.addItem("L-18");
+      chLesson.addItem("L-20");
+      chLesson.addItem("L-21");
       chLesson.addItemListener(new MyItemListener(cmdLesson));
 
       lblRound = new Label("Round", Label.CENTER);
@@ -304,7 +319,7 @@ public class CPRGameFrame
       lblOldAnswer = new Label("", Label.CENTER);
       lblOldAnswer.setBackground(Color.black);
       lblOldAnswer.setForeground(Color.white);
-      lblOldAnswer.setFont(new Font("SansSerif", Font.PLAIN, 14));
+      lblOldAnswer.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
       btnQuestion = new Button(" Listen to Audio ");
       btnQuestion.addActionListener(new MyActionListener(cmdPlaySound));
@@ -460,16 +475,25 @@ public class CPRGameFrame
       panbot.add(btn3);
       panbot.add(btn4);
       panbot.add(btn5);
-      panbot.add(lblStats);
+      Panel panTemp = new Panel();
+      panTemp.setLayout(new GridLayout(2, 1));
+      panTemp.add(lblOldAnswer);
+      panTemp.add(lblStats);
+      //panbot.add(lblStats);
+      panbot.add(panTemp);
     }
     else
     {
       panbot.add(new Label(" "));
       panbot.add(lblFillBlank);
       panbot.add(tfFillBlank);
-      panbot.add(lblOldAnswer); //new Label(" "));
       panbot.add(new Label(" "));
-      panbot.add(lblStats);
+      Panel panTemp = new Panel();
+      panTemp.setLayout(new GridLayout(2, 1));
+      panTemp.add(lblOldAnswer);
+      panTemp.add(lblStats);
+      panbot.add(new Label(" "));
+      panbot.add(panTemp);
     }
 
     panRight.add(pantop);
@@ -635,7 +659,8 @@ public class CPRGameFrame
        else if (strLanguage.equals("German"))
           words = new CPRVocab(CPRVocab.GERMAN);
 */
-       words = new CPRVocab((Integer.valueOf(chLesson.getSelectedItem())).intValue());
+       //words = new CPRVocab((Integer.valueOf(chLesson.getSelectedItem())).intValue());
+       words = new CPRVocab(chLesson.getSelectedIndex() + 1);
 
        if (cbTrans1.getState())
           intMethod = 1;
@@ -811,14 +836,16 @@ public class CPRGameFrame
         intCorrect++;
         doHitEnemy(((int)(random.nextFloat() * intDamageGoodHit))+1);
         lblStats.setForeground(Color.green);
+        //lblOldAnswer.setForeground(Color.green);
         lblStats.setText("Accuracy = " +intCorrect+"/"+intTotal+" : "+
           ((100*intCorrect/intTotal))+"%");
 
        // added support to show correct answer if not in multiple choice mode
-       if (!isMultipleChoice)
-       {
-          lblOldAnswer.setText("");
-       }
+//       if (!isMultipleChoice)
+//       {
+          //lblOldAnswer.setText("");
+          lblOldAnswer.setText("Dui4 le! (" + words.getForeign(intWord) + ")");
+//       }
 
         canAnimation.repaint();
     }
@@ -932,14 +959,15 @@ public class CPRGameFrame
         doHitRadman(((int)(intDamageWrong * random.nextFloat()))+1);
         intTotal++;
         lblStats.setForeground(Color.red);
+        //lblOldAnswer.setForeground(Color.red);
         lblStats.setText("Accuracy = "+intCorrect+"/"+intTotal+" : " +
            ((100*intCorrect/intTotal))+"%");
 
        // added support to show correct answer if not in multiple choice mode
-       if (!isMultipleChoice)
-       {
-          lblOldAnswer.setText("(" + words.getForeign(intWord) + ")");
-       }
+//       if (!isMultipleChoice)
+//       {
+          lblOldAnswer.setText("Bu4 dui4... (" + words.getForeign(intWord) + ")");
+//       }
 
         canAnimation.repaint();
     }
@@ -1506,9 +1534,14 @@ public class CPRGameFrame
                  boolean isModel)
        {
           super(frmParent, strTitle, isModel);
+          //this.setBackground(Color.black);
           Label lblText = new Label(strText, Label.CENTER);
+          lblText.setForeground(Color.white);
+          //lblText.setBackground(Color.black);
           lblText.setFont(new Font("Serif", Font.ITALIC + Font.BOLD, 18));               
           Button btnOkay = new Button(" Okay ");
+          btnOkay.setForeground(Color.white);
+          //btnOkay.setBackground(Color.black);
           btnOkay.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)
@@ -1558,9 +1591,14 @@ public class CPRGameFrame
        {
           super(frmParent, strTitle, isModel);
           this.frmParent = frmParent;
+          //this.setBackground(Color.black);
           lblQuit = new Label("Are you sure you want to quit?", Label.CENTER);
+          lblQuit.setForeground(Color.white);
+          //lblQuit.setBackground(Color.black);
           lblQuit.setFont(new Font("Serif", Font.BOLD, 18));               
           btnYes = new Button(" Yes ");
+          btnYes.setForeground(Color.white);
+          //btnYes.setBackground(Color.black);
           btnYes.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)
@@ -1570,6 +1608,8 @@ public class CPRGameFrame
           });
           btnYes.setFont(new Font("SansSerif", Font.BOLD, 14));               
           btnNo = new Button("  No  ");
+          btnNo.setForeground(Color.white);
+          //btnNo.setBackground(Color.black);
           btnNo.addActionListener(new ActionListener()
           {
              public void actionPerformed(ActionEvent e)

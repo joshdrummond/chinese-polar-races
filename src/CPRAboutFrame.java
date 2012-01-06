@@ -1,5 +1,5 @@
 /*
-    Chinese Polar Races v1.2
+    Chinese Polar Races v2.02
     Joshua Drummond
 
     The About Screen
@@ -23,8 +23,8 @@ public class CPRAboutFrame
         ta.setEditable(false);
         ta.setBackground(Color.black);
         ta.setForeground(Color.white);
-        String s = "Chinese Polar Races v2.0\n" +
-                   "Copyright 1999 by Josh Drummond (Han2 Guo2 An1)\n\n" +
+        String s = "Chinese Polar Races v2.5\n" +
+                   "(c) 1999-2000 Josh Drummond (Han2 Guo2 An1)\n\n" +
                    "\n\nPurpose:\n\n" +
                    "Learn Mandarin with audio, characters and Pinyin\n" +
                    "in a fun environment in this flashcard type game.\n" +
@@ -40,7 +40,7 @@ public class CPRAboutFrame
                    " - To memorize Pinyin tone marks and add challenge\n" +
                    "choose Play and either English/Character/Audio\n" +
                    "to Pinyin fill in the blank.\n" +
-                   " - To memorize Character writing, choose Review\n" +
+                   " - To memorize Character writing, choose Practice\n" +
                    "and turn Display Character off.  Click on Random\n" +
                    "and try to write the character. Then turn Display\n" +
                    "Character back on and see if you got it correct.\n" +

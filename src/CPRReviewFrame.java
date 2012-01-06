@@ -179,8 +179,22 @@ public class CPRReviewFrame
 
         chLesson = new Choice();
         chLesson.setFont(new Font("SansSerif", Font.BOLD, 14));
-        for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
+        chLesson.setBackground(Color.white);
+        //for (int i = 0; i < CPRVocab.MAX_LESSON; i++)
+        //   chLesson.addItem(""+(i+1));
+        // pcr
+        for (int i = 0; i < 30; i++)
            chLesson.addItem(""+(i+1));
+        // lic
+        chLesson.addItem("L-2");
+        chLesson.addItem("L-3");
+        chLesson.addItem("L-6");
+        chLesson.addItem("L-7");
+        chLesson.addItem("L-8");
+        chLesson.addItem("L-12");
+        chLesson.addItem("L-18");
+        chLesson.addItem("L-20");
+        chLesson.addItem("L-21");
         chLesson.addItemListener(new ItemListener()
         {
            public void itemStateChanged(ItemEvent e)
@@ -383,7 +397,8 @@ public class CPRReviewFrame
 
        private void doLessonChange()
        {
-           int intLesson = (Integer.valueOf(chLesson.getSelectedItem())).intValue();
+      //     int intLesson = (Integer.valueOf(chLesson.getSelectedItem())).intValue();
+           int intLesson = (chLesson.getSelectedIndex() + 1);
            words.setLesson(intLesson);
            intMaxWord = words.convertMaxLesson(intLesson);
            if (cbxCumulative.getState())
