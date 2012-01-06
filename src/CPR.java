@@ -10,6 +10,7 @@ import java.awt.event.*;
 
 public class CPR
     extends Applet
+//    implements FocusListener
 {
     private Button btnPlay;
     private Button btnReview;
@@ -24,8 +25,8 @@ public class CPR
     {
        System.out.println("-------------------------------------------------");
        System.out.println("Starting Chinese Polar Races...");
-       System.out.println("Version number: 1.7");
-       System.out.println("Version date: 11/17/1999");
+       System.out.println("Version number: 2.01");
+       System.out.println("Version date: 12/26/1999");
        System.out.println("(c)1999 Josh Drummond");
        System.out.println("-------------------------------------------------");
 
@@ -33,9 +34,12 @@ public class CPR
        canTitle = new CPRTitleCanvas("Chinese Polar Races!", new Font("TimesRoman", 
           Font.BOLD, 48), Color.white);
           
-       canGraphic = new CPRImageCanvas(getImage(getDocumentBase(), "back1.jpg"), 350, 350);
+       canGraphic = new CPRImageCanvas(
+       CPRResourceLoader.getImage("/back1.jpg", this),
+       //getImage(getDocumentBase(), "back1.jpg"),
+       350, 350);
 
-       btnPlay = new Button("   Play   ");
+       btnPlay = new Button("    Play    ");
        btnPlay.addActionListener(new ActionListener()
        {
           public void actionPerformed(ActionEvent e)
@@ -44,7 +48,7 @@ public class CPR
           }
        });
 
-       btnReview = new Button(" Review ");
+       btnReview = new Button(" Practice ");
        btnReview.addActionListener(new ActionListener()
        {
           public void actionPerformed(ActionEvent e)
@@ -53,7 +57,7 @@ public class CPR
           }
        });
 
-       btnAbout = new Button("  About  ");
+       btnAbout = new Button("   About   ");
        btnAbout.addActionListener(new ActionListener()
        {
           public void actionPerformed(ActionEvent e)
@@ -61,11 +65,26 @@ public class CPR
              doAbout();
           }
        });
+ //      btnAbout.addFocusListener(this);
+ //      btnReview.addFocusListener(this);
+ //      btnPlay.addFocusListener(this);
 
        drawScreen();
      }
 
 
+  /*   public void focusGained(FocusEvent e)
+     {
+        System.out.println("focus gained");
+        canTitle.stop();
+     }
+
+     public void focusLost(FocusEvent e)
+     {
+        System.out.println("focus lost");
+        canTitle.start();
+     }
+*/
      private void drawScreen()
      {
        this.setBackground(Color.black);

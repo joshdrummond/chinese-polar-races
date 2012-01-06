@@ -112,6 +112,7 @@ public class CPRGameFrame
    private double dblAccuracy;
 
    // *** Strings
+   //private String strSeparator;
 
    // *** Other
    private GridBagLayout gbl;
@@ -341,7 +342,10 @@ public class CPRGameFrame
       btn5.setForeground(Color.black);
       btn5.setFont(new Font("SansSerif", Font.BOLD, 14));
 
-      canQuestion = new CPRImageCanvas(CPR.app.getImage(CPR.app.getDocumentBase(), "cpr1.gif"), 350, 350);
+      //canQuestion = new CPRImageCanvas(CPR.app.getImage(CPR.app.getDocumentBase(), "cpr1.gif"), 350, 350);
+      canQuestion = new CPRImageCanvas(
+         CPRResourceLoader.getImage("/cpr1.gif", this),
+         350, 350);
 
       lblStats = new Label("Accuracy = 0/0 100%", Label.CENTER);
       lblStats.setBackground(Color.black);
@@ -354,18 +358,21 @@ public class CPRGameFrame
       tfFillBlank.setForeground(Color.white);
       tfFillBlank.addActionListener(new MyActionListener(cmdFillBlank));
 
-      tracker = new MediaTracker(CPR.app);
-      imgBackground = CPR.app.getImage(CPR.app.getDocumentBase(), "back2.jpg");
-      tracker.addImage(imgBackground, 0);
-      imgPolarBear1 = CPR.app.getImage(CPR.app.getDocumentBase(), "polar1.gif");
-      tracker.addImage(imgPolarBear1, 1);
-      imgPolarBear2 = CPR.app.getImage(CPR.app.getDocumentBase(), "polar2.gif");
-      tracker.addImage(imgPolarBear2, 2);
-      imgRadman1 = CPR.app.getImage(CPR.app.getDocumentBase(), "radman1.gif");
-      tracker.addImage(imgRadman1, 3);
-      imgRadman2 = CPR.app.getImage(CPR.app.getDocumentBase(), "radman2.gif");
-      tracker.addImage(imgRadman2, 4);
-
+      //tracker = new MediaTracker(CPR.app);
+      //imgBackground = CPR.app.getImage(CPR.app.getDocumentBase(), "back2.jpg");
+      imgBackground = CPRResourceLoader.getImage("/back2.jpg", this);
+      //tracker.addImage(imgBackground, 0);
+      //imgPolarBear1 = CPR.app.getImage(CPR.app.getDocumentBase(), "polar1.gif");
+      imgPolarBear1 = CPRResourceLoader.getImage("/polar1.gif", this);
+      //tracker.addImage(imgPolarBear1, 1);
+      //imgPolarBear2 = CPR.app.getImage(CPR.app.getDocumentBase(), "polar2.gif");
+      imgPolarBear2 = CPRResourceLoader.getImage("/polar2.gif", this);
+      //tracker.addImage(imgPolarBear2, 2);
+      imgRadman1 = CPRResourceLoader.getImage("/radman1.gif", this);
+      //tracker.addImage(imgRadman1, 3);
+      imgRadman2 = CPRResourceLoader.getImage("/radman2.gif", this);
+      //tracker.addImage(imgRadman2, 4);
+/*
       try
       {
          tracker.waitForAll();
@@ -374,10 +381,11 @@ public class CPRGameFrame
       {
          System.out.println("Loading Images Interrupted!");
       }
-
+*/
 
       random = new Random();
       isShowThread = false;
+      //strSeparator = System.getProperty("file.separator");
       thread = new MyThread();
       thread.start();
       runThread = new RunningThread();
@@ -396,8 +404,8 @@ public class CPRGameFrame
       intEnemyHealth = 100;
       panLeft = new Panel();
       panRight = new Panel();
-
-
+  
+      setResizable(false);
       // *** Load options screen
       drawOptions();
     }
@@ -1092,7 +1100,8 @@ public class CPRGameFrame
      }
      else if (intMethod == 3)
      {
-        sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "cpr"+intWord+".au");
+        //sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "cpr"+intWord+".au");
+        sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "audio//cpr"+intWord+".au");
         sound.play();
       if (isMultipleChoice)
       {
@@ -1140,7 +1149,8 @@ public class CPRGameFrame
       }
       else if (intMethod == 4)
       {
-        sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "cpr"+intWord+".au");
+        //sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "cpr"+intWord+".au");
+        sound = CPR.app.getAudioClip(CPR.app.getDocumentBase(), "audio//cpr"+intWord+".au");
         sound.play();
        if (isMultipleChoice)
        {
@@ -1188,7 +1198,8 @@ public class CPRGameFrame
      }
      else if (intMethod == 5)
      {
-        canQuestion.setImage(CPR.app.getImage(CPR.app.getDocumentBase(),"cpr"+intWord+".gif"));
+        //canQuestion.setImage(CPR.app.getImage(CPR.app.getDocumentBase(),"cpr"+intWord+".gif"));
+        canQuestion.setImage(CPRResourceLoader.getImage("/cpr"+intWord+".gif", this));
        if (isMultipleChoice)
        {
         if (intAnswer == 1)
@@ -1235,7 +1246,8 @@ public class CPRGameFrame
       }
       else if (intMethod == 6)
       {
-        canQuestion.setImage(CPR.app.getImage(CPR.app.getDocumentBase(),"cpr"+intWord+".gif"));
+        //canQuestion.setImage(CPR.app.getImage(CPR.app.getDocumentBase(),"cpr"+intWord+".gif"));
+        canQuestion.setImage(CPRResourceLoader.getImage("/cpr"+intWord+".gif", this));
        if (isMultipleChoice)
        {
         if (intAnswer == 1)

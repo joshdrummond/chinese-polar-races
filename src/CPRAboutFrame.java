@@ -23,7 +23,7 @@ public class CPRAboutFrame
         ta.setEditable(false);
         ta.setBackground(Color.black);
         ta.setForeground(Color.white);
-        String s = "Chinese Polar Races v1.7\n" +
+        String s = "Chinese Polar Races v2.0\n" +
                    "Copyright 1999 by Josh Drummond (Han2 Guo2 An1)\n\n" +
                    "\n\nPurpose:\n\n" +
                    "Learn Mandarin with audio, characters and Pinyin\n" +
@@ -55,14 +55,15 @@ public class CPRAboutFrame
                    "The words used are separated by Lessons in sync\n" +
                    "with "+
                    "that of the Practical Chinese Reader used in\n" +
-                   "Chinese 1A "+
-                   "at UCI.  Qu4 Anteaters!\nHope its helpful =)\n\n";
+                   "first year Chinese classes "+
+                   "at UCI.\nHope its helpful =)\n\n";
         ta.append(s);
-        this.setSize(400,400);
-        this.setLayout(new GridLayout(1,1));
-        this.add(ta);
-        this.center();
-        this.setVisible(true);
+        setSize(420,400);
+        setLayout(new GridLayout(1,1));
+        add(ta);
+        center();
+        setResizable(false);
+        setVisible(true);
     }
 
     private void center()
